@@ -1,0 +1,21 @@
+<div>
+  <h2>ToDo List</h2>
+  <ul>
+    @for (item of todos; track $index) {
+    <li>
+      <div>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+        <button (click)="handleRemove(item._id)">Remove</button>
+      </div>
+    </li>
+    }
+  </ul>
+  <div>
+    <form [formGroup]="profileForm" (ngSubmit)="handleSubmit()">
+      <input type="text" formControlName="title" />
+      <input type="text" formControlName="description" />
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
